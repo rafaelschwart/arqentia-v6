@@ -1,0 +1,15 @@
+# Markdown noise — but KEEP the runtime agent definitions
+# under .claude/agents/ so the agent-loader can read them in prod.
+*.md
+!.claude/agents/**/*.md
+
+# Backups + builds
+.git.bak/
+.vercel.bak/
+.env.local
+arqentia-v6.zip
+*.zip
+
+# Loose files that shouldn't ship
+*.log
+logs/

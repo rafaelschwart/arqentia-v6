@@ -1,0 +1,12 @@
+// api/_lib/ratelimit.js
+// In-memory rate limiter — per Vercel instance, not global. Adequate for hobby tier.
+const buckets = new Map();
+
+export function checkRate(key, max, windowMs) {
+  const now = Date.now();
+  const bucket = buckets.get(key) || { count: 0, resetAt: now + windowMs };
+  if (now >= bucket.resetAt) { bucket.count = 0; bucket.resetAt = now + windowMs; }
+  bucket.count += 1;
+  buckets.set(key, bucket);
+  return { allowed: bucket.count <= max, remaining: Math.max(0, max - bucket.count), resetAt: bucket.resetAt };
+}

@@ -1,0 +1,44 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": ".claude/agents/**/*.md"
+    }
+  },
+  "rewrites": [
+    { "source": "/discovery/p/:token/demo", "destination": "/discovery/p-demo?token=:token" },
+    { "source": "/discovery/p/:token",      "destination": "/discovery/p?token=:token" },
+    { "source": "/discovery/login",         "destination": "/discovery/login" },
+    { "source": "/discovery/text",          "destination": "/discovery/text" },
+    { "source": "/discovery/voice",         "destination": "/discovery/voice" },
+    { "source": "/arqentia/admin",          "destination": "/discovery/admin" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
+        { "key": "Permissions-Policy", "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(self), payment=(), usb=()" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https: blob:; media-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com https://vitals.vercel-insights.com; connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://api.openai.com wss://api.openai.com; form-action 'self'; upgrade-insecure-requests" }
+      ]
+    },
+    {
+      "source": "/api/discovery/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/api/admin/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}

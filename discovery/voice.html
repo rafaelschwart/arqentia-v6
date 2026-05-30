@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Arqentia — Discovery (voice)</title>
+  <meta name="description" content="Talk to our AI agent. A 5-minute voice conversation about your operations." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/tokens.css" />
+  <link rel="stylesheet" href="/discovery/discovery.css" />
+</head>
+<body class="disc-shell disc-shell--voice">
+  <script>
+    document.body.classList.add('js-ready');
+    var _RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.addEventListener('click', function(e) {
+      if (_RM) return;
+      var a = e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('//')) return;
+      if (href.indexOf('/discovery') === -1 && href !== '/') return;
+      e.preventDefault();
+      document.body.classList.add('is-leaving');
+      setTimeout(function() { window.location.href = href; }, 230);
+    });
+  </script>
+  <a href="#root" class="skip-link">Skip to content</a>
+  <canvas id="shader-bg" aria-hidden="true"></canvas>
+
+  <header>
+    <nav class="top" aria-label="Primary">
+      <div class="container row">
+        <a href="/" class="brand">Arq<em>e</em>ntia. <span class="v">// DISCOVERY · VOICE</span></a>
+        <ul class="links">
+          <li><a href="/discovery">&larr; Back to discovery</a></li>
+        </ul>
+        <div class="right">
+          <div class="disc-langtoggle disc-langtoggle--header" role="group" aria-label="Language">
+            <button data-lang="en" type="button">EN</button>
+            <span aria-hidden="true">|</span>
+            <button data-lang="es" type="button">ES</button>
+          </div>
+          <span class="pill"><span class="dot"></span>FLORIDA &mdash; LIMA</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="root" aria-live="polite"></div>
+
+  <script type="module" src="/discovery/shader.js"></script>
+  <script type="module" src="/discovery/voice.js"></script>
+</body>
+</html>

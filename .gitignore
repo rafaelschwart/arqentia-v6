@@ -1,0 +1,29 @@
+# Vercel deployment (contains project IDs)
+.vercel/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Env / secrets (none committed)
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+
+# v6 additions — backups / builds / scratch
+.git.bak/
+.vercel.bak/
+*.zip
+*.log
+logs/
+
+# Local dev env (never commit secrets)
+.env*.local

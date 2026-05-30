@@ -1,0 +1,379 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ARQENTIA · V4 · DESIGN TOKENS
+   ──────────────────────────────────────────────────────────────────────
+   Single source of truth. Every color, size, spacing value, radius,
+   shadow, and motion curve in the Arqentia site MUST trace back to a
+   token defined here. No raw hex codes downstream. No sub-pixel sizes.
+   No ad-hoc spacing. No second easing curve.
+
+   Locked: 2026-05-13 · Auditor: Visual Designer · Verdict: SHIPPABLE
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* ─────────────────────────────────────────────────────────────────
+     COLOR · INK · PAPER · LINE
+     ────────────────────────────────────────────────────────────────
+     Neutral spine of the system. Ink for text + dark surfaces,
+     paper/bone for light surfaces, line for hairlines.
+     ───────────────────────────────────────────────────────────── */
+  --ink:           #0B1220;   /* deepest fill · primary text on light · base of dark sections */
+  --ink-2:         #1E293B;   /* secondary text on light · subhead */
+  --ink-3:         #475569;   /* tertiary text · body copy */
+  --ink-4:         #64748B;   /* muted · captions · eyebrow numerals */
+  --bone:          #F8FAFC;   /* off-white surface · nav backdrop · pre-paper */
+  --paper:         #FFFFFF;   /* pure white surface · cards on light */
+  --mist:          #E9EFF8;   /* faint tinted surface · subtle dividers */
+  --tint:          #DBEAFE;   /* arq-tinted surface · chip backgrounds */
+  --line:          #E2E8F0;   /* primary hairline color */
+  --line-2:        #CBD5E1;   /* hover/active hairline */
+
+  /* ─────────────────────────────────────────────────────────────────
+     COLOR · BRAND BLUE FAMILY (3 tokens, was 5 undocumented blues)
+     ────────────────────────────────────────────────────────────────
+     Locked. Use ONLY these. No raw hex blues anywhere downstream.
+     The previous codebase had #1E3A8A, #1D4ED8, #2563EB, #3b82f6,
+     #60A5FA all floating — three of those were undocumented drift.
+     ───────────────────────────────────────────────────────────── */
+  --arq-deep:      #1E3A8A;   /* darkest brand blue · gradient start · footer accents */
+  --arq:           #2563EB;   /* PRIMARY brand · CTA fill · light-section accent */
+  --arq-bright:    #3B82F6;   /* hover/pressed states on --arq · gradient mid */
+  --arq-mid:       #1D4ED8;   /* ALIAS — hover state on solid arq CTAs (replaces raw #1D4ED8) */
+  --signal-pale:   #60A5FA;   /* dark-section accent · WAS the only dark-on-dark blue */
+
+  /* Surface-blue alphas (replace ad-hoc rgba(96,165,250,X) sprinkled site-wide) */
+  --signal-pale-12: rgba(96,165,250,.12);  /* faintest tint on dark cards */
+  --signal-pale-18: rgba(96,165,250,.18);  /* inner border on dark cards */
+  --signal-pale-20: rgba(96,165,250,.20);  /* DEFAULT dark-card hairline */
+  --signal-pale-24: rgba(96,165,250,.24);  /* chip border on dark surfaces */
+  --signal-pale-32: rgba(96,165,250,.32);  /* highlight border · hover */
+  --signal-pale-55: rgba(96,165,250,.55);  /* focus ring color · the load-bearer */
+
+  /* ─────────────────────────────────────────────────────────────────
+     COLOR · ALERT SEMANTICS (6 tokens, was 0 on dark surfaces)
+     ────────────────────────────────────────────────────────────────
+     Solid (-700 range) for light surfaces, pale (-300/400 range) for
+     dark surfaces. Pair them — never use solid on dark navy.
+     ───────────────────────────────────────────────────────────── */
+  --crit:          #DC2626;   /* error · destructive · alert (LIGHT surface) */
+  --crit-pale:     #FCA5A5;   /* error on DARK surface */
+  --warn:          #C2410C;   /* caution · warning (LIGHT surface) */
+  --warn-pale:     #FBBF24;   /* caution on DARK surface · KPI alert dot */
+  --ok:            #15803D;   /* success · confirmed (LIGHT surface) */
+  --ok-pale:       #86EFAC;   /* success on DARK surface */
+
+  /* ─────────────────────────────────────────────────────────────────
+     COLOR · DARK-SURFACE FILLS (the override block, formalized)
+     ────────────────────────────────────────────────────────────────
+     Pulled out of the V3 override block at index.html:1683+. These
+     are the EXACT alphas every dark card uses. Inline as variables
+     instead of as rgba()-with-magic-numbers per component.
+     ───────────────────────────────────────────────────────────── */
+  --dark-card:        rgba(15,23,42,.66);   /* DEFAULT dark-card fill */
+  --dark-card-hover:  rgba(15,23,42,.78);   /* hover state */
+  --dark-card-deep:   rgba(15,23,42,.80);   /* contact channel hover */
+  --dark-input:       rgba(11,18,32,.58);   /* form fields on dark */
+  --dark-inset:       rgba(11,18,32,.62);   /* .you box inside cards */
+
+  /* ─────────────────────────────────────────────────────────────────
+     TYPOGRAPHY · FONT FAMILIES (locked)
+     ───────────────────────────────────────────────────────────── */
+  --font-display: "Space Grotesk","SF Pro Display",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-body:    "DM Sans","SF Pro Text",-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --font-mono:    "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --font-italic:  "DM Sans","SF Pro Text",sans-serif; /* uses italic variant of body */
+
+  /* ─────────────────────────────────────────────────────────────────
+     TYPOGRAPHY · SIZE SCALE (6 tokens, was 22 distinct sizes)
+     ────────────────────────────────────────────────────────────────
+     Modular ratio: 1.25 (Major Third)
+     Base: 14px (body)
+     Scale:   11 → 14 → 17 → 22 → 32 → 56  (+ optional mega 72)
+     Anchor of the scale is 14, not 16 — Arqentia reads as engineering
+     dossier, where the documentary information density is tighter
+     than a marketing-default 16px body.
+     ───────────────────────────────────────────────────────────── */
+  --text-mono:     11px;   /* eyebrows · tags · numerics · table cells (NEVER body) */
+  --text-small:    14px;   /* microcopy · labels · footnotes · default UI */
+  --text-body:     17px;   /* main reading text · paragraph copy */
+  --text-h3:       22px;   /* component headlines · card titles · pull-quotes */
+  --text-h2:       32px;   /* section headlines · chapter heads */
+  --text-display:  56px;   /* hero h1 · the screenshottable size */
+  --text-mega:     72px;   /* OPTIONAL · single-purpose huge numerics (e.g. .method .num) */
+
+  /* Line-heights — paired to each size, tighter as size grows */
+  --lh-mono:    1.4;
+  --lh-small:   1.45;
+  --lh-body:    1.6;
+  --lh-h3:      1.25;
+  --lh-h2:      1.15;
+  --lh-display: 1.05;
+  --lh-mega:    1.0;
+
+  /* Letter-spacing — tightens as size grows, opens up for CAPS/mono */
+  --tr-mono:     0.14em;   /* eyebrow caps · the ALL CAPS standard */
+  --tr-small:    0.01em;
+  --tr-body:     0;
+  --tr-h3:      -0.015em;
+  --tr-h2:      -0.02em;
+  --tr-display: -0.025em;
+  --tr-mega:    -0.03em;
+
+  /* ─────────────────────────────────────────────────────────────────
+     SPACING · 4PT GRID (was: a declared 8pt grid that's actually 4pt)
+     ────────────────────────────────────────────────────────────────
+     Locked at 4pt. Audit found 69 instances of multiples-of-4-not-8.
+     Honor the codebase's actual rhythm. Forbidden values still are
+     anything off the 4pt grid: 3, 5, 7, 9, 11, 22, 26 → ban these.
+     ───────────────────────────────────────────────────────────── */
+  --space-1:    4px;
+  --space-2:    8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32: 128px;
+
+  /* Layout constants */
+  --max:       1320px;       /* container max-width */
+  --gutter:     56px;        /* container side padding (desktop) — 14×4 grid */
+  --pad-y:     120px;        /* section vertical padding (desktop) */
+
+  /* ─────────────────────────────────────────────────────────────────
+     RADII · SQUARE-EVERYWHERE + CIRCLE ALLOWLIST
+     ────────────────────────────────────────────────────────────────
+     The cleanest part of V3. Preserve.
+     Application rule:
+       * { border-radius: var(--radius-square); }
+     plus an explicit selector list that gets --radius-circle.
+     See design-system.md §5 for the full allowlist.
+     ───────────────────────────────────────────────────────────── */
+  --radius-square: 0;
+  --radius-circle: 50%;
+
+  /* ─────────────────────────────────────────────────────────────────
+     SHADOWS · 6 TOKENS (was 35 distinct recipes)
+     ────────────────────────────────────────────────────────────────
+     Vocabulary:
+       rest         · cards at idle, almost imperceptible
+       hover        · the lift cue when pointer enters
+       focus        · keyboard focus ring (the load-bearer — see §8)
+       elevation-2  · modals, deep-dive overlay
+       elevation-3  · tour callout, premium surfaces
+       glow         · signal-blue glow on the primary CTA
+     ───────────────────────────────────────────────────────────── */
+  --shadow-rest:        0 1px 0 rgba(0,0,0,.02), 0 40px 80px -40px rgba(15,23,42,.18);
+  --shadow-hover:       0 24px 48px -24px rgba(96,165,250,.32);
+  --shadow-focus:       0 0 0 3px var(--signal-pale-55);            /* base ring — pair with --focus-ring-* */
+  --shadow-elevation-2: 0 24px 64px -16px rgba(15,23,42,.40), 0 8px 24px -8px rgba(15,23,42,.30);
+  --shadow-elevation-3: 0 32px 80px -24px rgba(15,23,42,.50), 0 12px 32px -8px rgba(15,23,42,.36);
+  --shadow-glow:        0 8px 24px -8px rgba(37,99,235,.50), 0 1px 0 rgba(255,255,255,.16) inset;
+
+  /* ─────────────────────────────────────────────────────────────────
+     FOCUS RINGS · WCAG 2.4.7 / AA · NON-NEGOTIABLE
+     ────────────────────────────────────────────────────────────────
+     V3 had ZERO :focus-visible rules. This is the load-bearing
+     fix of the audit. Apply via :focus-visible on every interactive
+     element. The 2-layer ring (3px signal + 4px ink/paper) gives
+     the focus a halo that reads on both surfaces.
+     ───────────────────────────────────────────────────────────── */
+  --focus-ring-light: 0 0 0 3px var(--signal-pale-55), 0 0 0 4px var(--paper);
+  --focus-ring-dark:  0 0 0 3px var(--signal-pale-55), 0 0 0 4px var(--ink);
+
+  /* ─────────────────────────────────────────────────────────────────
+     TOUR · ARROW
+     ────────────────────────────────────────────────────────────────
+     Inline SVG arrow connecting tour callout (outside dashboard)
+     to its target element inside .live-dash. All three values are
+     aliases of existing system primitives — no new colors, no new
+     measurements off the 4pt grid.
+     ───────────────────────────────────────────────────────────── */
+  --arrow-color:     var(--signal-pale);   /* default arrow stroke + fill */
+  --arrow-width:     1.6px;                /* matches Lucide icon stroke */
+  --arrow-head-size: 10px;                 /* triangle edge length */
+
+  /* ─────────────────────────────────────────────────────────────────
+     MOTION · SINGLE EASE + EXPLICIT DURATION SCALE
+     ────────────────────────────────────────────────────────────────
+     V3 had TWO ease curves running at the same time (Material's
+     cubic-bezier(.4,0,.2,1) and the newer custom one). Locked to
+     ONE curve. Always cite by token, never inline a curve.
+     ───────────────────────────────────────────────────────────── */
+  --ease:       cubic-bezier(.22,.6,.36,1);   /* snappy in, soft out — Arqentia signature */
+  --ease-out:   cubic-bezier(0,0,.2,1);       /* exit-only · modal close · toast dismiss */
+  --ease-in:    cubic-bezier(.4,0,1,1);       /* entry-only · rarely used · for emphasis */
+
+  --dur-fast:    140ms;   /* hover · link color · chip toggle */
+  --dur-base:    220ms;   /* card lift · button state · tab switch */
+  --dur-slow:    360ms;   /* tour-callout reposition · drawer slide */
+  --dur-modal:   450ms;   /* modal open/close · deep-dive overlay */
+
+  /* ─────────────────────────────────────────────────────────────────
+     Z-INDEX SCALE (utility — keeps the modal order legible)
+     ───────────────────────────────────────────────────────────── */
+  --z-base:        1;
+  --z-sticky:     50;     /* nav.top */
+  --z-overlay:   400;     /* tour callout · backdrop blur layers */
+  --z-modal:     600;     /* deep-dive */
+  --z-toast:     800;     /* future · form success/error */
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   RESPONSIVE — narrow viewports tighten the layout grid (not the type
+   scale, the page reflows but the rhythm holds)
+   ──────────────────────────────────────────────────────────────────── */
+@media (max-width: 820px){
+  :root{
+    --gutter:     24px;
+    --pad-y:      80px;
+    --text-display: 40px;   /* hero drops at small screens */
+    --text-h2:      26px;
+    --text-mega:    56px;
+    --dot-size:     6px;    /* MOBILE-ONLY · 2026-05-15 · mobile-redesign engagement · carousel pagination dot diameter */
+  }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   prefers-reduced-motion · ACCESSIBILITY HARD STOP
+   ─────────────────────────────────────────────────────────────────────
+   WCAG 2.3.3. The V3 site had ZERO of these. This block kills every
+   animation and transition, freezes scroll behavior, and (paired with
+   the JS guard at the bottom) pauses the WebGL shader.
+
+   Note for Frontend Builder: also add to the WebGL IIFE:
+     const RM = matchMedia('(prefers-reduced-motion: reduce)');
+     function frame(){
+       if (document.hidden || RM.matches) return;
+       // ...gl.drawArrays
+       requestAnimationFrame(frame);
+     }
+   ═════════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    animation-delay:           0      !important;
+    transition-duration:       0.01ms !important;
+    transition-delay:          0      !important;
+    scroll-behavior:           auto   !important;
+  }
+
+  html{ scroll-behavior: auto !important; }
+
+  /* Freeze the WebGL shader visually (JS still must cancelAnimationFrame) */
+  .hero canvas,
+  canvas#shader,
+  canvas.bg-shader{
+    animation: none !important;
+    opacity: 0.65 !important;
+  }
+
+  /* Disable the pulse on status dots so the page is fully still */
+  .pill .dot,
+  .live::before{
+    box-shadow: none !important;
+    animation: none !important;
+  }
+
+  /* V4.2 — kill the wave-flow animation on the global .bg-waves layer */
+  .bg-waves{ animation: none !important; }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   V4.2 ADDITIONS — 2026-05-14 · Visual Designer
+   ─────────────────────────────────────────────────────────────────────
+   Tokens for the five V4.2 changes:
+     1. Industry carousel (illustrations + motion)
+     2. Pricing section (featured tier + cancellation block)
+     3. FAQ section (hover bg + max width)
+     4. Method polish (no new tokens needed — recomposition only)
+     5. Section transition seam fix (unified light bg)
+   ═════════════════════════════════════════════════════════════════════ */
+:root{
+  /* Industry carousel · illustration palette */
+  --illust-stroke:      rgba(255,255,255,.72);   /* default stroke on dark slides */
+  --illust-stroke-w:    1.6px;                   /* alias of Lucide stroke (locked) */
+  --illust-hairline:    rgba(255,255,255,.18);   /* secondary geometry */
+  --illust-fill-faint:  rgba(96,165,250,.08);    /* the single allowed fill */
+  --illust-accent:      var(--signal-pale);      /* alias for clarity */
+
+  /* Carousel motion */
+  --carousel-slide-distance: 64px;
+  --carousel-auto-advance:   6500ms;
+
+  /* Pricing tier · featured */
+  --border-featured:    2px solid var(--arq);
+  --tag-featured-offset: -12px;       /* top: offset for the featured tag */
+
+  /* Pricing cancellation block */
+  --cancel-bg:          var(--ink);
+  --cancel-text:        #fff;
+  --cancel-text-muted:  rgba(255,255,255,.82);
+
+  /* FAQ */
+  --faq-hover-bg:       rgba(0,0,0,.02);
+  --faq-max-w:          880px;
+
+  /* Section transition seam fix · unified light-section base */
+  --light-section-bg:   rgba(252,253,254,.78);   /* 78% so the document-tall wave layer shows through on light sections */
+  --dark-section-bg:    rgba(11,18,32,.88);       /* 88% so the wave layer stays muted under dark sections (rhythm chapter break) */
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   EN/ES LANGUAGE TOGGLE — appears in the marketing top nav
+   Mounted by discovery/marketing.js into [data-arq-lang-mount].
+   The marketing site is dark-themed by default, so the toggle uses light
+   text-on-dark with an outlined pill silhouette for affordance.
+   ═══════════════════════════════════════════════════════════════════════ */
+.arq-langtoggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-right: 12px;
+  padding: 3px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 6px;
+  background: rgba(255,255,255,.04);
+}
+.arq-langtoggle__btn{
+  background: transparent;
+  border: 0;
+  padding: 4px 9px;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: rgba(255,255,255,.62);
+  border-radius: 4px;
+  transition: color 150ms ease, background 150ms ease;
+}
+.arq-langtoggle__btn:hover{
+  color: #fff;
+  background: rgba(255,255,255,.06);
+}
+.arq-langtoggle__btn.is-active{
+  color: #fff;
+  background: var(--signal-pale, #60a5fa);
+  font-weight: 600;
+}
+.arq-langtoggle__sep{ display: none; }   /* pill design — no slash separator needed */
+
+/* Light-surface variant (admin/profile chrome) — opt-in via .arq-langtoggle--light */
+.arq-langtoggle--light{
+  border-color: rgba(0,0,0,.18);
+  background: rgba(0,0,0,.03);
+}
+.arq-langtoggle--light .arq-langtoggle__btn{ color: rgba(0,0,0,.62); }
+.arq-langtoggle--light .arq-langtoggle__btn:hover{ color: #000; background: rgba(0,0,0,.04); }
+.arq-langtoggle--light .arq-langtoggle__btn.is-active{ color: #fff; background: var(--arq, #2563eb); }

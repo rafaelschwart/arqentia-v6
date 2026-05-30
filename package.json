@@ -1,0 +1,20 @@
+{
+  "name": "arqentia-v6",
+  "version": "6.0.0",
+  "description": "Arqentia v6 — marketing site + discovery + admin + profile, integrated build.",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "vercel dev",
+    "dev": "vercel dev --listen 4321"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "animejs": "^4.4.1",
+    "bcryptjs": "^2.4.3",
+    "resend": "^4.0.0"
+  }
+}

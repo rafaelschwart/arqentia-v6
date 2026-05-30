@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Notice · Arqentia</title>
+<meta name="description" content="How Arqentia protects the information you share with us." />
+<link rel="canonical" href="https://arqentia.com/privacy" />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="Privacy Notice · Arqentia" />
+<meta property="og:description" content="How Arqentia protects the information you share with us." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://arqentia.com/privacy" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1220'/%3E%3Ctext x='16' y='22' font-family='Space Grotesk,sans-serif' font-size='18' font-weight='600' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://arqentia.com/#organization",
+      "name": "Arqentia",
+      "legalName": "Arqentia Inc.",
+      "url": "https://arqentia.com/",
+      "logo": "https://arqentia.com/og-image.jpg",
+      "areaServed": { "@type": "Country", "name": "United States" }
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://arqentia.com/privacy",
+      "name": "Privacy Notice — Arqentia",
+      "description": "How Arqentia handles the information you share. We do not sell, share, or use it to train AI models.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://arqentia.com/#website" }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-italic: 'Newsreader', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --ink: #0B1220;
+    --ink-2: #2A3142;
+    --ink-3: #4A5163;
+    --ink-4: #8A92A6;
+    --line: rgba(11,18,32,.10);
+    --paper: #FAFAFA;
+    --arq: #2563EB;
+    --signal-pale: #93C5FD;
+  }
+  *{ box-sizing: border-box;}
+  html,body{ margin:0; padding:0;}
+  body{
+    font-family: var(--font-body); color: var(--ink-2);
+    background: #FAFAFA; font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: var(--arq); text-decoration: none;}
+  a:hover{ text-decoration: underline;}
+  .container{ max-width: 1200px; margin: 0 auto; padding: 0 24px;}
+  nav.top{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,.88);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .row{ display: flex; align-items: center; height: 64px; gap: 32px;}
+  nav.top .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 30px;
+    color: var(--ink); letter-spacing: -.04em; text-decoration: none;
+  }
+  nav.top .brand em{
+    font-family: var(--font-display); font-style: italic; font-weight: 600;
+    color: var(--arq); letter-spacing: -.04em;
+    margin-right: .06em; margin-left: -.04em;
+  }
+  nav.top ul.links{ display: flex; gap: 26px; margin: 0 0 0 12px; padding: 0; list-style: none;}
+  nav.top ul.links a{ font-size: 14px; color: var(--ink-3); font-weight: 500;}
+  nav.top ul.links a:hover{ color: var(--ink); text-decoration: none;}
+  nav.top .right{ margin-left: auto;}
+  @media (max-width:920px){ nav.top ul.links{ display: none;} }
+
+  main.legal{ padding: 80px 0 120px;}
+  main.legal .container{ max-width: 760px;}
+  main.legal .eyebrow{
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em;
+    color: var(--ink-4); text-transform: uppercase; margin: 0 0 18px;
+  }
+  main.legal .eyebrow .bar{ width: 28px; height: 1px; background: var(--arq);}
+  main.legal h1{
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(36px, 5vw, 56px); line-height: 1.05;
+    letter-spacing: -.025em; color: var(--ink); margin: 0 0 12px;
+  }
+  main.legal h1 em{ font-family: var(--font-italic); font-style: italic; font-weight: 500; color: var(--arq);}
+  main.legal .updated{
+    font-family: var(--font-mono); font-size: 12px; color: var(--ink-4);
+    letter-spacing: .1em; text-transform: uppercase; margin: 0 0 48px;
+  }
+  main.legal h2{
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 22px; line-height: 1.3; letter-spacing: -.015em;
+    color: var(--ink); margin: 48px 0 14px;
+  }
+  main.legal h2::before{
+    content: counter(sec, decimal-leading-zero) " · ";
+    color: var(--arq); font-family: var(--font-mono); font-size: 14px;
+    font-weight: 500; letter-spacing: .02em;
+  }
+  main.legal section{ counter-increment: sec;}
+  main.legal{ counter-reset: sec;}
+  main.legal p{ margin: 0 0 14px; font-size: 16px; color: var(--ink-2);}
+  main.legal ul{ margin: 0 0 16px; padding-left: 22px;}
+  main.legal li{ margin-bottom: 8px; color: var(--ink-2);}
+  main.legal strong{ color: var(--ink); font-weight: 600;}
+  main.legal .note{
+    margin: 32px 0 0; padding: 16px 18px;
+    border-left: 3px solid var(--arq); background: rgba(37,99,235,.04);
+    font-size: 14.5px; color: var(--ink-3);
+  }
+
+  footer.site{
+    background: transparent;
+    color: var(--ink-2);
+    padding: 64px 0 32px;
+    position: relative;
+    border-top: 1px solid var(--line);
+  }
+  footer.site .row{ display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;}
+  @media (max-width:920px){ footer.site .row{ grid-template-columns: 1fr 1fr; gap: 36px 32px;}}
+  @media (max-width:600px){ footer.site .row{ grid-template-columns: 1fr; gap: 28px;}}
+
+  /* MOBILE HAMBURGER MENU · 2026-05-17 */
+  .nav-hamburger{
+    display: none; flex-direction: column;
+    background: transparent; border: 0; padding: 0; cursor: pointer;
+    width: 44px; height: 44px; align-items: center; justify-content: center;
+    margin-left: auto; position: relative; z-index: 60;
+  }
+  .nav-hamburger span{
+    display: block; width: 22px; height: 2px; background: var(--ink);
+    border-radius: 2px; margin: 3px 0;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(5px) rotate(45deg);}
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2){ opacity: 0;}
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-5px) rotate(-45deg);}
+  .nav-drawer{
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--line); z-index: 49;
+    transform: translateY(-12px); opacity: 0; pointer-events: none;
+    transition: transform .28s cubic-bezier(.22,.6,.36,1), opacity .2s ease;
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  .nav-drawer.open{ transform: translateY(0); opacity: 1; pointer-events: auto;}
+  .nav-drawer ul{ list-style: none; margin: 0; padding: 8px 0 24px;}
+  .nav-drawer li{ margin: 0;}
+  .nav-drawer a{
+    display: block; padding: 14px 24px;
+    font-family: var(--font-display); font-size: 17px; font-weight: 500;
+    color: #0B1220 !important; text-decoration: none;
+    border-bottom: 1px solid #E2E8F0; letter-spacing: -.01em;
+  }
+  .nav-drawer a:hover{ background: #F8FAFC; color: #2563EB !important;}
+  .nav-drawer .drawer-cta{
+    display: block; margin: 20px 24px 0;
+    background: var(--arq); color: #fff;
+    padding: 16px 24px; border-radius: 10px;
+    text-align: center; font-size: 16px; font-weight: 500; border-bottom: 0;
+  }
+  @media (max-width: 768px){ .nav-hamburger{ display: inline-flex;} }
+  footer.site .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 30px;
+    color: var(--ink); letter-spacing: -.04em;
+  }
+  footer.site .brand em{
+    font-family: var(--font-display); font-style: italic; font-weight: 600;
+    color: var(--arq); letter-spacing: -.04em;
+    margin-right: .06em; margin-left: -.04em;
+  }
+  footer.site .brand-sub{
+    margin-top: 14px; font-size: 14px; color: var(--ink-2); line-height: 1.55; max-width: 32ch;
+  }
+  footer.site h5{
+    margin: 0 0 14px; font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: .14em; color: var(--arq); text-transform: uppercase; font-weight: 600;
+  }
+  footer.site ul{ list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;}
+  footer.site ul li{ color: var(--ink-2); font-size: 14px;}
+  footer.site a{ color: var(--ink-2); font-size: 14px;}
+  footer.site a:hover{ color: var(--arq); text-decoration: none;}
+  footer.site .below{
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(11,18,32,.08);
+    display: flex; justify-content: space-between; gap: 24px;
+    font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);
+    letter-spacing: .08em; text-transform: uppercase; flex-wrap: wrap;
+  }
+  footer.site .below b{ color: var(--ink); font-weight: 600;}
+  footer.site .below .sub{ display: flex; gap: 18px;}
+  footer.site .below .sub a{ font-size: 11px; color: var(--ink-3); letter-spacing: .08em;}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container">
+    <div class="row">
+      <a class="brand" href="/">Arq<em>e</em>ntia.</a>
+      <ul class="links">
+        <li><a href="/how-we-work">How we work</a></li>
+        <li><a href="/sectors">Sectors</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/how-we-work">How we work</a></li>
+    <li><a href="/sectors">Sectors</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</div>
+
+<main class="legal">
+  <div class="container">
+    <div class="eyebrow"><span class="bar"></span>// LEGAL · PRIVACY</div>
+    <h1>Privacy <em>notice.</em></h1>
+    <div class="updated">Last updated · 2026-05-17</div>
+
+    <section>
+      <h2>Who we are</h2>
+      <p>Arqentia Inc. (&ldquo;Arqentia&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a company incorporated in the State of Florida, United States, with operating offices in Florida (USA) and Lima (Per&uacute;). This notice describes, in plain language, how we handle the information you choose to send us through this website.</p>
+    </section>
+
+    <section>
+      <h2>What we collect</h2>
+      <p>We only receive what you choose to send. There is no account system, no advertising pixels, and no third-party profiling on this site.</p>
+      <p>When you write to us or submit the contact form, we receive your name, your work email, and anything else you decide to include about your operation. Our hosting and email providers also keep standard technical logs for spam protection and uptime.</p>
+    </section>
+
+    <section>
+      <h2>What we do with it</h2>
+      <p>Strictly the purpose you sent it for:</p>
+      <ul>
+        <li>To read your message, ask follow-up questions in writing, and reply.</li>
+        <li>To prepare proposals and engagement documents if we agree to work together.</li>
+        <li>To keep records when required by applicable tax, accounting, and corporate law.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Service providers we use</h2>
+      <p>To run this website and reply to your messages, we rely on a small set of vendors. Each is bound by a contractual confidentiality standard and processes data only on our instructions:</p>
+      <ul>
+        <li><strong>Vercel</strong> &mdash; hosts the website and provides first-party performance measurement (Vercel Analytics and Speed Insights). These tools collect aggregated page-load metrics and Core Web Vitals. They do not use advertising cookies and do not profile individual visitors.</li>
+        <li><strong>Resend</strong> &mdash; delivers the contact form message to our inbox. The contents of your submission pass through Resend solely as transport; nothing is stored beyond the delivery window.</li>
+        <li><strong>Google Workspace</strong> &mdash; the email account that receives messages sent to <a href="mailto:hello@arqentia.com">hello@arqentia.com</a>.</li>
+      </ul>
+      <p>No advertising, no analytics resellers, no AI-training partners. If we add a vendor in the future, this list is the first place we will update.</p>
+    </section>
+
+    <section>
+      <h2>What we do NOT do</h2>
+      <p>This is the part that matters most:</p>
+      <ul>
+        <li><strong>We do not sell your information.</strong> Not to brokers, not to marketing platforms, not to anyone.</li>
+        <li><strong>We do not share it.</strong> Not with affiliates, not with partners, not with vendors beyond what is strictly required to operate (e.g. email hosting under confidentiality).</li>
+        <li><strong>We do not use it to train AI models.</strong> Not ours, not anyone else&rsquo;s.</li>
+        <li><strong>We do not profile you.</strong> No advertising cookies, no cross-site tracking, no behavioral scoring.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How we protect it</h2>
+      <p>Your information lives on infrastructure with encryption in storage and in transit, permission-based access for our team, audit logs on production changes, and isolated environments per client engagement. Confidentiality is the working standard for everything you share with us.</p>
+    </section>
+
+    <section>
+      <h2>NDA on request</h2>
+      <p>If you prefer to formalize confidentiality before sharing operational details, you may request a non-disclosure agreement before any discovery conversation. Specific terms are reviewed case by case; signing an NDA is not automatic and we may decline or propose adjustments.</p>
+    </section>
+
+    <section>
+      <h2>How long we keep it</h2>
+      <p>Only for the time required by the matter it relates to and by applicable law. Records of inactive inquiries are deleted under our internal retention schedule.</p>
+    </section>
+
+    <section>
+      <h2>Your rights</h2>
+      <p>We respect the rights granted to you by the privacy laws that apply to your situation, including, where applicable, access, correction, and deletion of the information we hold about you. To make a request, write to <a href="mailto:hello@arqentia.com">hello@arqentia.com</a>. We reply in writing within a reasonable time.</p>
+    </section>
+
+    <section>
+      <h2>Cookies</h2>
+      <p>This site uses only the cookies strictly necessary to display the page and remember basic preferences. No advertising or third-party tracking cookies are used.</p>
+    </section>
+
+    <section>
+      <h2>Changes to this notice</h2>
+      <p>We may update this notice from time to time. The version in effect is the one shown on this page, with the &ldquo;Last updated&rdquo; date above.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p><strong>Arqentia Inc.</strong><br />Florida, United States &mdash; Lima, Per&uacute;<br />Email: <a href="mailto:hello@arqentia.com">hello@arqentia.com</a></p>
+    </section>
+
+    <div class="note">This notice describes our practices in good faith. Where a mandatory privacy law in your jurisdiction grants you more protection than what is stated here, that law applies and prevails over any conflicting clause.</div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="brand">Arq<em>e</em>ntia.</div>
+        <p class="brand-sub">We build the operating system your business is missing. Florida — Lima. EN · ES.</p>
+      </div>
+      <div>
+        <h5>// Platform</h5>
+        <ul>
+          <li><a href="/#capabilities">Dashboards</a></li>
+          <li><a href="/#capabilities">Automation</a></li>
+          <li><a href="/#capabilities">AI Agents</a></li>
+          <li><a href="/#capabilities">Integration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>// Proof</h5>
+        <ul>
+          <li><a href="/sectors">Sectors</a></li>
+          <li><a href="/how-we-work">How we work</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>// Company</h5>
+        <ul>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Engagement Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>// Offices</h5>
+        <ul>
+          <li>Florida · USA — operating</li>
+          <li>Lima · Perú — opening Q3</li>
+          <li>EN · ES</li>
+        </ul>
+      </div>
+    </div>
+    <div class="below">
+      <span>© 2026 <b>ARQENTIA</b> — Website v02 · rel 26.06</span>
+      <span class="sub">
+        <a href="/privacy">Privacy</a><a href="/terms">Engagement Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var drawer = document.getElementById('nav-drawer');
+  if (!btn || !drawer) return;
+  function close(){ drawer.classList.remove('open'); btn.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow='';}
+  function open(){ drawer.classList.add('open'); btn.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';}
+  btn.addEventListener('click', function(){ drawer.classList.contains('open') ? close() : open(); });
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && drawer.classList.contains('open')) close(); });
+})();
+</script>
+</body>
+</html>
