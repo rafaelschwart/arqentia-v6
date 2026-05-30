@@ -27,3 +27,4 @@ logs/
 
 # Local dev env (never commit secrets)
 .env*.local
+.vercel
